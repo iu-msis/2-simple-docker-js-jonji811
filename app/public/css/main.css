@@ -1,0 +1,63 @@
+.mainheader {
+    font-size: 42px;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+}
+
+.home-header {
+    font-size: 42px;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: skyblue;
+}
+
+#btn1:hover {
+    background-color: darksalmon;
+}
+
+#btn1:active {
+    background-color: darksalmon;
+    box-shadow: 0 5px;
+    transform: translateY(4px);
+}
+
+#btn1 {
+    background-color: black;
+    color: white;
+    padding: 5px 16px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+#centeralign {
+    text-align: center;
+}
+
+#td1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#th1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}

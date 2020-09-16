@@ -48,15 +48,15 @@
                 <th id="th1"> Email </th>
                 <th id="th1"> Picture </th>
             </thead>
-            <tbody>
+            <tbody id="userTable">
 
-                <tr>
-                    <td id="td1"> Michael Jordan </td>
-                    <td id="td1"> United States </td>
-                    <td id="td1"> 09/01/1972 </td>
-                    <td id="td1"> 48 </td>
-                    <td id="td1"> <a href="mailto:michael.jordan@gmail.com"> michael.jordan@gmail.com</a> </td>
-                    <td id="td1"> <img src="img/michael.jpg" alt="Michael" </td>
+                <tr v-for="u in uList">
+                    <td id="td1">{{ u.results }}</td>
+                    <td id="td1">{{ u.firstName }}</td>
+                    <td id="td1">{{ u.dob }}</td>
+                    <td id="td1">{{ u.lastName }}</td>
+                    <td id="td1">{{ u.lastName }}</td>
+                    <td id="td1">{{ u.lastName }}</td>
                 </tr>
 
             </tbody>
@@ -73,9 +73,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/tablesort.min.js"></script>
     <script>
       new Tablesort(document.getElementById('task-table'));
     </script>
+    <script src="js/user_info.app.js"></script>
   </body>
 </html>

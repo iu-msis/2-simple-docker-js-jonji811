@@ -51,12 +51,12 @@
             <tbody id="userTable">
 
                 <tr v-for="u in uList">
-                    <td id="td1">{{ u.results }}</td>
-                    <td id="td1">{{ u.firstName }}</td>
-                    <td id="td1">{{ u.dob }}</td>
-                    <td id="td1">{{ u.lastName }}</td>
-                    <td id="td1">{{ u.lastName }}</td>
-                    <td id="td1">{{ u.lastName }}</td>
+                    <td id="td1">{{ u.first }} {{ u.last }}</td>
+                    <td id="td1">{{ u.timezone.description }}</td>
+                    <td id="td1">{{ u.dob.date }}</td>
+                    <td id="td1">{{ u.dob.age }}</td>
+                    <td id="td1">{{ u.email }}</td>
+                    <td id="td1">{{ u.picture.medium }}</td>
                 </tr>
 
             </tbody>

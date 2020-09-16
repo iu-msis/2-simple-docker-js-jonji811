@@ -32,7 +32,7 @@ var app = new Vue({
   },
 
   created() {
-    fetch("https://randomuser.me/api/")
+    fetch("https://randomuser.me/api/?results=")
     .then( response => response.json() )
     .then( json => {
       this.uList = json;

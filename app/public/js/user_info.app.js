@@ -6,7 +6,8 @@ var app = new Vue({
     uBirthdate:'',
     uAge:'',
     uEmail:'',
-    uPicture:'',
+    uImgLarge:'',
+    uImgMedium:'',
     uList: [],
   },
   created() {
@@ -21,11 +22,12 @@ var app = new Vue({
         var userData = data.results[0];
         console.log(userData);
         this.uName = userData.name.first + " " + userData.name.last;
-        this.uOrigin = userData.name.first;
-        this.uBirthdate = userData.name.first;
-        this.uAge = userData.name.first;
-        this.uEmail = userData.name.first;
-        this.uPicture = userData.name.first;
+        this.uOrigin = userData.location.state;
+        this.uBirthdate = userData.dob.date;
+        this.uAge = userData.dob.age;
+        this.uEmail = userData.email;
+        this.uImgLarge = userData.picture.large;
+        this.uImgMedium = userData.picture.medium;
       });
     }
   }

@@ -1,42 +1,32 @@
 var app = new Vue({
   el: '#userTable',
   data: {
-    fake: [
-      {
-        "patientGuid": "SOME-REALLY-LONG-1234",
-        "firstName": "Sylvia",
-        "lastName": "Hernandez",
-        "dob": "2012-09-01",
-        "sexAtBirth": "F",
-        "priority": "critical"
-      },
-      {
-        "patientGuid": "SOME-REALLY-SHORT-5678",
-        "firstName": "Vish",
-        "lastName": "Balasubramanian",
-        "dob": "1950-12-15",
-        "sexAtBirth": "M",
-        "priority": "urgent"
-      },
-      {
-        "patientGuid": "SOME-UNIQUE-ABCDE1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "dob": "1997",
-        "sexAtBirth": "M",
-        "priority": "minor"
-      }
-    ],
+    uName:'',
+    uOrigin:'',
+    uBirthdate:'',
+    uAge:'',
+    uEmail:'',
+    uPicture:'',
     uList: [],
-    user: {}
+  },
+  created() {
+    this.fetchUser();
   },
 
-  created() {
-    fetch("https://randomuser.me/api/?results=")
-    .then( response => response.json() )
-    .then( json => {
-      this.uList = json;
-      console.log(json)}
-    );
+  methods: {
+    fetchUser: function() {
+      fetch("https://randomuser.me/api/")
+      .then( response => response.json() )
+      .then( data => {
+        var userData = data.results[0];
+        console.log(userData);
+        this.uName = userData.name.first + " " + userData.name.last;
+        this.uOrigin = userData.name.first;
+        this.uBirthdate = userData.name.first;
+        this.uAge = userData.name.first;
+        this.uEmail = userData.name.first;
+        this.uPicture = userData.name.first;
+      });
+    }
   }
 })

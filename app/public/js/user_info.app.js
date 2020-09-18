@@ -28,7 +28,10 @@ var app = new Vue({
         this.uEmail = userData.email;
         this.uImgLarge = userData.picture.large;
         this.uImgMedium = userData.picture.medium;
+
       });
-    }
-  }
-})
+    },
+       formatDate(d) { return moment(d).format("MMM Do YYYY");
+       }
+     },
+  })

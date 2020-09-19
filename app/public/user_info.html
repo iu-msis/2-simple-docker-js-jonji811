@@ -55,7 +55,7 @@
                     <td id="td1">{{ uOrigin }}</td>
                     <td id="td1">{{ formatDate(uBirthdate) }}</td>
                     <td id="td1">{{ uAge }}</td>
-                    <td id="td1">{{ uEmail}}</td>
+                    <td id="td1"><a v-bind:href=" 'mailto:' + uEmail">{{ uEmail }}</a></td>
                     <td id="td1"><a v-bind:href="uImgLarge"><img v-bind:src="uImgMedium"></td>
                 </tr>
 

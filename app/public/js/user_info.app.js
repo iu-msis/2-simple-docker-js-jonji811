@@ -22,7 +22,7 @@ var app = new Vue({
         var userData = data.results[0];
         console.log(userData);
         this.uName = userData.name.first + " " + userData.name.last;
-        this.uOrigin = userData.location.state;
+        this.uOrigin = userData.location.country;
         this.uBirthdate = userData.dob.date;
         this.uAge = userData.dob.age;
         this.uEmail = userData.email;

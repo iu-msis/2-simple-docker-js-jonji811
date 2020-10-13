@@ -9,7 +9,7 @@ var app = new Vue({
     newCommentData() {
       return {
         id: "",
-        comment: ""
+        comments: ""
       }
     };
 

@@ -15,7 +15,7 @@ var app = new Vue({
 
     handleNewCommentForm( evt ) {
 
-      fetch('api/comment/index.php', {
+      fetch('api/comment/post.php', {
         method:'POST',
         body: JSON.stringify(this.newCommentForm),
         headers: {

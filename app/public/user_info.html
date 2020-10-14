@@ -36,7 +36,7 @@
       </div>
     </nav>
 
-    <div>
+    <div id="app">
         <h1 class="mainheader"> User Information </h1>
 
         <table id="task-table" class="table table-bordered table-striped table-hover">
@@ -59,7 +59,7 @@
                     <td id="td1">{{ formatDate(uBirthdate) }}</td>
                     <td id="td1">{{ uAge }}</td>
                     <td id="td1"><a v-bind:href=" 'mailto:' + uEmail">{{ uEmail }}</a></td>
-                    <td id="td1"><a v-bind:href="uImgLarge"><img v-bind:src="uImgMedium"></td>
+                    <td id="td1"><a v-bind:href="uImgLarge"><img v-bind:src="uImgMedium"></a></td>
                 </tr>
 
             </tbody>
@@ -67,7 +67,7 @@
         </table>
 
             <form v-on:submit.prevent="fetchUser">
-              <button>  New User </button>
+              <button type="submit">  New User </button>
             </form>
 
   </div>

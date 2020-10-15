@@ -1,5 +1,5 @@
 var app = new Vue({
-  el: '#userTable',
+  el: '#app',
   data: {
     commentList: [],
     newCommentForm: {}
@@ -39,7 +39,7 @@ var app = new Vue({
     fetch("api/comment/")
     .then( response => response.json() )
     .then( json => {
-      this.newCommentForm = json;
+      this.commentList = json;
 
       console.log(json)}
     );

@@ -1,4 +1,5 @@
-USE homework;
+create database msis;
+USE msis;
 
 DROP TABLE IF EXISTS Comments;
 CREATE TABLE Comments (

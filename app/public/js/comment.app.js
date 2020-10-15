@@ -1,23 +1,30 @@
 var app = new Vue({
   el: '#comments',
   data: {
-    commentList: [],
-    newCommentForm: {}
+    commentList: [{
+      id: '',
+      commentText: ''
+    }],
+    newComment: {
+      id: '',
+      commentText: ''
+    }
   },
 
-  methods: {
-    newCommentData() {
-      return {
-        id: "",
-        comments: ""
-      }
-    };
+  methods:{
+    fetchUser(){
+      fetch('api/comment/')
+      .then(json => {
+        this.commentList=json;
+        console.log(this.commentList);
+      });
+    },
 
-    handleNewCommentForm( evt ) {
-
+    createComment() {
+      this.newComment.id
       fetch('api/comment/create.php', {
         method:'POST',
-        body: JSON.stringify(this.newCommentForm),
+        body: JSON.stringify(this.newComment),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -25,25 +32,22 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        // TODO: test a result was returned!
         this.commentList.push(json[0]);
-        this.newCommentForm = this.newCommentData();
+        this.newComment = this.newCommentData();
       });
 
       console.log("Creating (POSTing)...!");
-      console.log(this.newCommentForm);
+      console.log(this.newComment);
     },
+    newCommentData() {
+      return {
+        id: "",
+        comments: ""
+      }
+    }
 
   },
   created() {
-    fetch("api/comment/")
-    .then( response => response.json() )
-    .then( json => {
-      this.commentList = json;
-
-      console.log(json)}
-    );
-
-    this.newCommentForm = this.newCommentData();
+    this.fetchUser();
   }
-  })
+});

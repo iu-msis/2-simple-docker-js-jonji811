@@ -37,7 +37,7 @@
       </div>
     </nav>
 
-    <div>
+    <div id="comments">
         <h1 class="mainheader"> Comments </h1>
 
         <table id="commentTable task-table" class="table table-bordered table-striped table-hover">
@@ -48,39 +48,25 @@
                 <th class="th1"> ID </th>
                 <th class="th1"> Comment </th>
             </thead>
-            <tbody v-for="c in commentList" id="commentTableBody">
-                <tr id="comments">
-                    <td class="td1">{{ c.id }}</td>
-                    <td class="td1">{{ c.commentText }}</td>
+            <tbody id="commentTableBody">
+                <tr v-for="com in commentList" id="comments">
+                    <td class="td1">{{ com.id }}</td>
+                    <td class="td1">{{ com.commentText }}</td>
                 </tr>
             </tbody>
 
         </table>
-    </div>
 
-    <!-- <div class="container-fluid">
-      <div class="row" id="comments">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-              <div class="commentList" v-for="c in commentList">
-                <span> {{ c.id }} </span>, <br/>
-                <span> {{ c.commentList }} </span>
-              </div><br/>
-            </div>
-          </div>
-    </div> -->
-
-
-    <div id="comments">
         <form v-on:submit.prevent="createComment()">
           <div class="commentList">
-            <label for="id"> ID </label>
-            <input type="text" v-model="newComment.id" class="form-control" id="id" readonly>
-            <label for="comment"> Comments </label>
-            <input type="textarea" v-model="newComment.commentText" class="form-control" id="comment">
+            <label for="comment"> Submit New Comment </label>
+            <input type="textarea" v-model="newComment.commentText" class="form-control" id="commentText">
           </div><br/>
           <input type="submit" value="Create New Comment" class="button">
         </form>
+
     </div>
+
 
     <!-- END content -->
 

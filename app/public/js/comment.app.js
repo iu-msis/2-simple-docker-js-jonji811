@@ -14,6 +14,7 @@ var app = new Vue({
   methods:{
     fetchUser(){
       fetch('api/comment/')
+      .then(response => response.json())
       .then(json => {
         this.commentList=json;
         console.log(this.commentList);
@@ -21,7 +22,6 @@ var app = new Vue({
     },
 
     createComment() {
-      this.newComment.id = this.newComment.id
       fetch('api/comment/create.php', {
         method:'POST',
         body: JSON.stringify(this.newComment),
@@ -32,7 +32,7 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.commentList.push(json[0]);
+        this.commentList = json;
         this.newComment = this.newCommentData();
       });
 

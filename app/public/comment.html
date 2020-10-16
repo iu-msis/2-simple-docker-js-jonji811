@@ -37,7 +37,7 @@
       </div>
     </nav>
 
-    <div id="commments">
+    <div>
         <h1 class="mainheader"> Comments </h1>
 
         <table id="commentTable task-table" class="table table-bordered table-striped table-hover">
@@ -48,8 +48,8 @@
                 <th class="th1"> ID </th>
                 <th class="th1"> Comment </th>
             </thead>
-            <tbody v-for="c in commentList" id="commentTableBody comments">
-                <tr>
+            <tbody v-for="c in commentList" id="commentTableBody">
+                <tr id="comments">
                     <td class="td1">{{ c.id }}</td>
                     <td class="td1">{{ c.commentText }}</td>
                 </tr>

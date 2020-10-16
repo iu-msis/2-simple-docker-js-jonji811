@@ -12,13 +12,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Comments (id, comment)
+  'INSERT INTO Comments (id, commentText)
   VALUES (?, ?)'
 );
 
 $stmt->execute([
   $_POST['id'],
-  $_POST['comment']
+  $_POST['commentText']
 ]);
 
 // If needed, get auto-generated PK from DB

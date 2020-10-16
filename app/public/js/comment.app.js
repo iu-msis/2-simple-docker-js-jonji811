@@ -21,7 +21,7 @@ var app = new Vue({
     },
 
     createComment() {
-      this.newComment.id
+      this.newComment.id = this.newComment.id
       fetch('api/comment/create.php', {
         method:'POST',
         body: JSON.stringify(this.newComment),

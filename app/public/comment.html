@@ -57,12 +57,12 @@
 
         </table>
 
-        <form v-on:submit.prevent="createComment()">
+        <form id="NewCommentForm" v-on:submit.prevent="createComment()">
           <div class="commentList">
             <label for="comment"> Submit New Comment </label>
             <input type="textarea" v-model="newComment.commentText" class="form-control" id="commentText">
           </div><br/>
-          <input type="submit" value="Create New Comment" class="button">
+          <input type="submit" value="Create New Comment" class="button" id="submitNewComment">
         </form>
 
     </div>
